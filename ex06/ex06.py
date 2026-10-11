@@ -6,18 +6,20 @@ from plotly.offline import init_notebook_mode
 
 init_notebook_mode(connected=True)
 
+# Generate random walk for stock price simulation
 returns = np.random.randn(50)
 price = 100 + np.cumsum(returns)
 
+# Create business day date range
 dates = pd.date_range(start='2020-09-01', periods=50, freq='B')
 df = pd.DataFrame(zip(dates, price), columns=['Date', 'Company_A'])
 
-# Plotly Express
+# Plotly Express - high-level interface
 fig_express = px.line(df, x='Date', y='Company_A', title='Company A Stock Price (Plotly Express)')
 fig_express.update_layout(xaxis_title='Date', yaxis_title='Price')
 fig_express.show()
 
-# Plotly Graph Objects
+# Plotly Graph Objects - low-level interface for more control
 fig_go = go.Figure()
 fig_go.add_trace(go.Scatter(x=df['Date'], y=df['Company_A'], mode='lines', name='Company_A'))
 fig_go.update_layout(

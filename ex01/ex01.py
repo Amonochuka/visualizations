@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# Create sample dataframe with people's data
 df = pd.DataFrame({
     'name': ['christopher', 'marion', 'maria', 'mia', 'clement', 'randy', 'remi'],
     'age': [70, 30, 22, 19, 45, 33, 20],
@@ -10,6 +11,7 @@ df = pd.DataFrame({
     'num_pets': [5, 1, 0, 5, 2, 2, 3]
 })
 
+# Create grouped bar plot using pandas plot wrapper
 ax = df.plot(x='name', y=['num_children', 'num_pets'], kind='bar', figsize=(10, 6))
 ax.set_title('Number of Children and Pets by Name')
 ax.set_xlabel('name')

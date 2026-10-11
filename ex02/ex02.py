@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# Create sample dataframe with people's data
 df = pd.DataFrame({
     'name': ['christopher', 'marion', 'maria', 'mia', 'clement', 'randy', 'remi'],
     'age': [70, 30, 22, 19, 45, 33, 20],
@@ -10,6 +11,7 @@ df = pd.DataFrame({
     'num_pets': [5, 1, 0, 2, 2, 2, 3]
 })
 
+# Create scatter plot to check relationship between age and number of children
 ax = df.plot(x='age', y='num_children', kind='scatter', figsize=(8, 6))
 ax.set_title('Age vs Number of Children')
 ax.set_xlabel('age')
