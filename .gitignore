@@ -1,1 +1,8 @@
 __pycache__/
+ex00/bin/
+ex00/etc/
+ex00/include/
+ex00/lib/
+ex00/lib64
+ex00/share/
+ex00/pyvenv.cfg
